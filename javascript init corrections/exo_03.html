@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	/**
+	 * Exercice #3
+	 *
+	 * Calculez dans de nouvelles variables :
+	 * 
+	 * 1. La moyenne de la team complète
+	 * 2. La moyenne de la team francaise
+	 * 3. La moyenne de la team anglaise
+	 */
+	
+	var albert 	 = 15821;
+	var david 	 = 8984;
+	var valentin = 27005;
+
+	var terry 	= 12040;
+	var billy 	= 21903;
+	var mike 	= 11304;
+
+	var moyenne_team_complete = (albert + david + valentin + terry + billy + mike) / 6;
+
+	var moyenne_team_francaise = (albert + david + valentin) / 3;
+	var moyenne_team_anglaise = (terry + billy + mike) / 3;
+
+	document.write("La moyenne de la team complete est de "+moyenne_team_complete.toFixed(2)+" points.")
+
+	</script>
+</body>
+</html>

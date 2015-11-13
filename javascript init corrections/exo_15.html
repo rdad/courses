@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	 /**
+	 * Exercice 15
+	 *
+	 * http://www.brainyquote.com/quotes/authors/s/steve_wozniak.html
+	 * Affichez le nombre de caractères de cette sitation
+	 */
+
+
+	var quote = "aau can make something big when young that will carry you through life. Look at all the big startups like Microsoft, Apple, Google, Facebook, Twitter, etc. They were all started by very young people who stumbled on something of unseen value. You'll know it when you hit a home run";
+
+	 document.write('la citation fait : '+quote.length+' caracteres <br />');
+	 document.write('Microsoft est a l\'indice : '+quote.indexOf('Microsoft')+'<br />');
+	 document.write('Google est a l\'indice : '+quote.indexOf('Google')+'<br />');
+	 document.write('Twitter est a l\'indice : '+quote.indexOf('Twitter')+'<br />');
+	 
+	 var liste_des_a 	= [];
+	 
+
+	 /* Bastien : Nbre de 'a' 
+
+	 for (var i = 0; i < quote.length; i++) {
+	 	if (quote[i] == 'a') {
+	 		liste_des_a.push(i);
+	 	}
+	 }*/
+
+	 var position 		= quote.indexOf('a');
+
+	 while(position>=0){
+	 	liste_des_a.push(position);
+	 	position = quote.indexOf('a', position+1);
+	 }
+
+	 document.write('le nombre de a dans quote est de : ' + liste_des_a.length + '<br />');
+	 document.write('les positions sont : ' + liste_des_a.join(' / '));
+
+
+	</script>
+</body>
+</html>

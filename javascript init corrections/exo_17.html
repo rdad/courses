@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	 /**
+	 * Exercice 17
+	 *
+	 * Analyse textuelle
+	 *
+	 * Affichez le nombre de mots
+	 * Affichez le nombre d'occurences des mots sous forme de tableau
+	 */
+
+
+	var texte = 'Stallman argues that software users should have the freedom to share with their neighbor and to be able to study and make changes to the software that they use. He maintains that attempts by proprietary software vendors to prohibit these acts are antisocial and unethical. The phrase "software wants to be free" is often incorrectly attributed to him, and Stallman argues that this is a misstatement of his philosophy. He argues that freedom is vital for the sake of users and society as a moral value, and not merely for pragmatic reasons such as possibly developing technically superior software.';
+
+		var words = texte.toLowerCase().split(' ').sort();
+
+		var result 			= [];
+		var result_count 	= [];
+		var indice 			= 0;
+
+		for(var j = 0; j<words.length; j++){
+
+			indice = result.indexOf(words[j]);
+
+			if(indice >= 0){
+				result_count[indice]++;
+			}else{
+				result.push(words[j]);
+				result_count.push(1);
+			}
+		}
+
+		// display
+		
+		var resultat = '<table>';
+
+		for(j = 0; j<result.length; j++){
+			resultat += '<tr><td>'+result[j]+'</td><td>'+result_count[j]+'</td></tr>';
+		}
+
+		resultat = resultat + '</table>';
+
+		document.write("Nombre de mots: "+ words.length);
+
+		document.write(resultat);
+
+
+	 
+	</script>
+</body>
+</html>

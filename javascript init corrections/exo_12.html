@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	 /**
+	 * Exercice 12
+	 *
+	 * Affichez les fiches complètes de chaque élèves 
+	 * (prénom, sexe, note)
+	 */
+
+	var prenoms = ["didier","stephane","romain","emilie","david","helene","thierry"];
+	var notes   = [13,9,14,10,4,17,19];	
+	var filles  = [false,false,false,true,false,true,false, false];
+
+	var sexe			= '',
+		moyenne_fille 	= 0,
+		moyenne_garcon 	= 0,
+		nb_fille 		= 0,
+		meilleur_note 	= -1,
+		meilleur_eleve 	= '',
+		mauvais_note 	= 21,
+		mauvais_eleve 	= '';
+
+
+	// passage en revue des eleves
+	
+	for (var i = 0; i < prenoms.length; i++) {
+
+		// meilleur eleve
+		
+		if(notes[i] > meilleur_note){
+			meilleur_note 	= notes[i];
+			meilleur_eleve 	= prenoms[i];
+		}
+
+		// moins bon eleve
+		
+		if(notes[i] < mauvais_note){
+			mauvais_note 	= notes[i];
+			mauvais_eleve 	= prenoms[i];
+		}
+
+		// moyennes
+		
+		if(filles[i] == true){
+			sex = 'fille';
+			moyenne_fille += notes[i];
+			nb_fille++;
+		}else{
+			sex = 'garcon';
+			moyenne_garcon += notes[i];
+		}
+
+		// affichage de chaque eleve
+		
+		document.write('<p style="border:1px solid #000"><h3>'+prenoms[i]+'</h3>'+notes[i]+'/20<br>'+sex+'</p>');
+	};
+
+	// resultat final
+	
+	document.write('<p>le meilleur eleve est '+meilleur_eleve+'</p>');
+
+	document.write('<p>le moins bon eleve est '+mauvais_eleve+'</p>');
+
+	document.write('la moyenne de la classe est de '+((moyenne_garcon+moyenne_fille) / prenoms.length).toFixed(2));
+
+	document.write('<p>la moyenne des filles est de '+(moyenne_fille / nb_fille).toFixed(2)+'</p>');
+
+	document.write('<p>la moyenne des garcons est de '+(moyenne_garcon / (prenoms.length - nb_fille)).toFixed(2)+'</p>');
+
+	</script>
+</body>
+</html>

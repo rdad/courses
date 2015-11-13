@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	 /**
+	 * Exercice #8
+	 *
+	 * Donnez un message précis à la réponse de l’utilisateur :
+	 * Est'il parisien ? Provincial ? des DOM TOM ?
+	 */
+
+	 var departement = prompt('Renseignez le numéro de votre département :');
+	 
+	 if ((departement >= 971 && departement <= 976) ||
+	  	departement == 984 ||
+	  	(departement >= 986 && departement <= 988)) 
+	 {
+	 	document.write('Vous habitez dans les DOM TOM');
+
+	 } else if (departement == 75 ||
+	 	 (departement >= 91 && departement <= 95)) 
+	 {
+	 	document.write('vous habitez en region parisienne');
+
+	 } else {
+	 	document.write('vous habitez en province');
+	 }
+	 
+	</script>
+</body>
+</html>

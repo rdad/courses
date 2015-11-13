@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	/**
+	 * Exercice #2
+	 *
+	 * Calculez dans de nouvelles variables :
+	 * 
+	 * 1. la part TVA (20%)
+	 * 2. Le prix TTC
+	 * 3. Le prix TTC en Dollars ( 1 euro = 1.10 $ )
+	 */
+	
+	var prix_ht 	= 245;
+	const TVA 		= 20;
+	const DOLLARS 	= 1.1;
+
+	var part_tva 			= prix_ht / 100 * TVA;
+	var prix_ttc 			= prix_ht + part_tva;
+	var prix_ttc_dollars 	= prix_ttc * DOLLARS;
+
+	document.write("Le prix TTC en Dollars est de " +prix_ttc_dollars.toFixed(2)+" $");
+
+
+
+	</script>
+</body>
+</html>

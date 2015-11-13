@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	 /**
+	 * Exercice 16bis
+	 *
+	 * Décodez le message secret et affichez le résultat.
+	 * La clé de décryptage est la suivante :
+	 * * devient a
+	 * _ devient e
+	 * % devient i
+	 * & devient o
+	 * $ devient u
+	 */
+
+
+	var  message = 'St_v_n P*$l "St_v_" J&bs w*s *n *m_r%c*n %nv_nt&r *nd _ntr_pr_n_$r. H_ w*s c&-f&$nd_r, ch*%rm*n, *nd ch%_f _x_c$t%v_ &ff%c_r &f *ppl_ %nc. J&bs w*s c&-f&$nd_r *nd pr_v%&$sly s_rv_d *s ch%_f _x_c$t%v_ &f P%x*r *n%m*t%&n St$d%&s; h_ b_c*m_ * m_mb_r &f th_ b&*rd &f d%r_ct&rs &f th_ W*lt D%sn_y C&mp*ny %n 2006, f&ll&w%ng th_ *cq$%s%t%&n &f P%x*r by D%sn_y.';
+
+	
+
+	function decode(texte, liste_encode, liste_decode){
+
+		var lettre 	 = '';
+		var indice   = 0;
+		var resultat = '';
+
+		for(var j=0; j<texte.length; j++){
+
+			lettre = texte.charAt(j);
+			indice = liste_encode.indexOf(lettre);
+			
+			if(indice >= 0){
+				lettre = liste_decode[indice];
+			}
+
+			resultat += lettre;
+		}
+
+		return resultat;
+	}
+
+
+	var message_clair = decode(message, ['*', '_', '%', '&', '$'], ['a', 'e', 'i', 'o', 'u']);
+
+	document.write('Message en clair: '+message_clair);
+
+	 
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	 /**
+	 * Exercice 10
+	 *
+	 * Affichez le nombre d'élèves dans la classe
+	 */
+
+
+	var garcon = ["didier","stephane","romain","david"];
+	var fille  = ["emilie","helene"];
+
+	/**
+	 * Permet d'afficher un tableau en liste html
+	 * @param  {Array} tableau : Tableau regrouppant les données à afficher
+	 * @param  {Boolean} ordonne (optionnel) : Liste ordonnée ou non ordonnée ? Par defaut ordonnée
+	 * @return {String}
+	 */
+	var displayArray = function (tableau, ordonne){
+
+		// ordonne par defaut : true
+		ordonne = (typeof ordonne == 'undefined') ? true : ordonne;
+
+		var liste = (ordonne == true) ? 'o' : 'u';
+
+		return "<"+liste+"l><li>"+tableau.join("</li><li>")+"</li></"+liste+"l>";
+	}
+
+
+	// update
+	garcon.push('ben');
+	fille.unshift('linda', 'celine');
+
+	garcon[2] = 'daniel';
+	garcon.splice(1,0,'julien');
+
+	var classe = garcon.concat(fille).sort().reverse();
+
+	document.write("le nombre d'éleves dans la classe est de : " + classe.length);
+	document.write(displayArray(classe, false));
+
+	document.write("Hélène se trouve a la position "+(classe.indexOf('helene')+1));
+	</script>
+</body>
+</html>

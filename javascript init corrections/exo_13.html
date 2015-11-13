@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	 /**
+	 * Exercice 13
+	 *
+	 * Affichez le panier complet 
+	 * 
+	 * x Liste des produits avec leurs prix
+	 * x Prix HT total
+	 * x Part TVA
+	 * x Prix total TTC
+	 * x Total des frais de livraison
+	 * x Réduction
+	 * x Prix à payer
+	 */
+
+	var prix        = [23.75, 21.38, 27.55, 7.13, 24.5, 31, 6.94];
+	var produits    = ["Steve Jobs par Walter Isaacson",
+                    "Cet instant-là par Douglas Kennedy",
+                    "Vivre la fin des temps par Slavoj Zizek",
+                    "Dondog par Antoine Volodine",
+                    "L'Ethique des hackers par Steven Levy",
+                    "JavaScript : Précis et concis par David Flanagan",
+                    "Glenn Gould piano solo - Aria et trente variations par Michel Schneider"];
+
+	var panier      = [0,4,5],
+		indice 		= 0;
+
+	const TVA       			= 5.5;
+	var reduction   			= 12;
+	var frais_livraison_base 	= 8;
+	var frais_par_livre 		= 0.5;
+
+	var resultat 				= '<table>';
+	var prix_ht					= 0;
+	var part_tva				= 0;	
+	var prix_ttc				= 0;
+	var frais_livraison_total 	= 0;
+	var prix_final 				= 0;	
+
+	for (var i = 0;i<panier.length;i++){
+
+		indice 		 = panier[i];
+		resultat 	+= '<tr>';
+		resultat	+= '<td>'+produits[indice]+'</td>';
+		resultat 	+= '<td>'+prix[indice].toFixed(2)+'</td>';
+		resultat 	+= '</tr>';
+		prix_ht     += prix[indice];
+	}
+
+	// Prix HT
+	resultat += '<tr><td> prix hors taxe </td><td>'+prix_ht+'</td></tr>';
+
+	// TVA
+	part_tva = prix_ht / 100 * TVA ;
+	resultat += '<tr><td> part TVA </td><td>'+part_tva.toFixed(2)+'</td></tr>';
+
+	// Prix TTC
+	prix_ttc = prix_ht + part_tva;
+	resultat += '<tr><td> prix TTC </td><td>'+prix_ttc.toFixed(2)+'</td></tr>';
+
+	// Livraison
+	frais_livraison_total =frais_livraison_base+frais_par_livre*panier.length;
+
+	resultat += '<tr><td> frais de livraison </td><td>'+frais_livraison_total.toFixed(2)+'</td></tr>';
+
+	// Réduction
+	resultat += '<tr><td style="color: green"> réduction </td><td>-'+reduction.toFixed(2)+'</td></tr>';
+
+	// Prix FINAL
+	prix_final = prix_ttc + frais_livraison_total - reduction;
+
+	resultat += '<tr><td style="color: red"> PRIX A PAYER </td><td  style="color: red">'+prix_final.toFixed(2)+'</td></tr>';
+
+	resultat += '</table>';
+
+
+	document.write(resultat);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	 /**
+	 * Exercice #9
+	 *
+	 * Créez un QUIZZ sur un sujet de votre choix
+	 * Il sera composé de 5 questions, les réponses possibles sont exclusivement "OUI" et "NON".
+	 * 
+	 * Après avoir posé les 5 questions et récupéré les 5 réponses, vous afficherez à l'écran :
+	 * 1. Le score du joueur sur 5
+	 * 2. Une appréciation en rapport avec son score.
+	 */
+	 
+	 var score = 0;
+	 var reponse;
+
+	 // Question 1
+	 
+	 reponse 	= prompt("Number est un type de données JS ?");
+	 if(reponse == 'OUI'){
+	 	score++;
+	 }	
+
+	 // Question 2
+	 
+	 reponse 	= prompt("L'instruction ELSE est obligatoire en JS ?");
+	 if(reponse == 'NON'){
+	 	score++;
+	 }	
+
+	 // Question 3
+	 
+	 reponse 	= prompt("Les constantes ne peuvent être modifiées ?");
+	 if(reponse == 'OUI'){
+	 	score++;
+	 }	
+
+	 // Question 4
+	 
+	 reponse 	= prompt("Les instructions de condition en JS sont: IF, SWITCH,  CONDITION");
+	 if(reponse == 'NON'){
+	 	score++;
+	 }	
+
+	 // Question 5
+	 
+	 reponse 	= prompt("JS est sensible à la casse ?");
+	 if(reponse == 'OUI'){
+	 	score++;
+	 }
+
+	 // Score
+	 
+	 document.write('<h3>Votre score est de '+score+' / 5</h3>');
+
+	 switch(score){
+	 	case 0:
+	 		document.write('Aie!? Il faut se mettre au travail!');
+	 		break;
+	 	case 5:
+	 		document.write('Bravo !');
+	 		break;
+	 	default:
+	 		document.write('Continuez  à bosser!');
+	 }
+
+	</script>
+</body>
+</html>

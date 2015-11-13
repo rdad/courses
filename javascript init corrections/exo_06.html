@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript : initiation</title>
+</head>
+<body>
+	
+	<script>
+
+	
+	/**
+	 * Exercice #6
+	 *
+	 * Donnez une réponse précise à la réponse de l’utilisateur :
+	 */
+
+	 var js_level = prompt('Quel est votre niveau en Javascript, entre 1 et 10 ?');
+
+		if(js_level > 0 && js_level <= 10){
+
+			if (js_level <= 3) {
+			 		document.write("bon courage");
+			 	}
+			 	else if (js_level <= 7){
+			 		document.write("pas mal");
+			 	}
+			 	else{
+			 		document.write("bravo");
+			 	}
+		}else{
+			document.write("Le score doit être entre 1 et 10");
+		}	 	
+
+	 	
+	</script>
+</body>
+</html>
