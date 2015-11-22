@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Galerie</title>
+	<style>
+		div{
+			width: 50px;
+			height: 50px;
+			background-color: #f00;
+			display: none;
+		}
+	</style>
+</head>
+<body>	
+	<div></div>
+	<script src='bower_components/jquery/dist/jquery.min.js'></script>
+
+	 <script src="js/jquery.easing.1.3.js"></script>
+
+	<script>
+
+	function message(){
+		console.log('OVER');
+	}
+
+	$(document).ready(function(){
+
+		$('div').on('mouseover', message);
+		$('div').on('click', message);
+
+		$('div').fadeIn(500, message);
+	});
+
+
+	</script>
+</body>
+</html>
